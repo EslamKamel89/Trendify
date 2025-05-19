@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     "@prisma/nuxt",
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
+    "nuxt-lodash",
   ],
   shadcn: {
     prefix: "",
