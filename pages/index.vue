@@ -1,5 +1,4 @@
 <script setup lang="ts"></script>
 <template>
-  <Button>Hello world</Button>
-  <Icon name="uil:github" />
+  <div>Hello world</div>
 </template>
