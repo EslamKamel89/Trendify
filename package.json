@@ -25,6 +25,7 @@
     "nuxt": "^3.17.3",
     "nuxt-auth-utils": "^0.5.20",
     "pinia": "^3.0.2",
+    "pinia-plugin-persistedstate": "^4.3.0",
     "reka-ui": "^2.2.1",
     "shadcn-nuxt": "^2.1.0",
     "tailwind-merge": "^3.3.0",

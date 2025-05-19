@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "nuxt-auth-utils",
     "@prisma/nuxt",
     "@pinia/nuxt",
+    "pinia-plugin-persistedstate/nuxt",
   ],
   shadcn: {
     prefix: "",
