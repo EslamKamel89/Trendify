@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/icon": "^1.13.0",
+    "@pinia/nuxt": "^0.11.0",
     "@prisma/nuxt": "^0.3.0",
     "@tailwindcss/vite": "^4.1.7",
     "@tanstack/vue-table": "^8.21.3",
@@ -23,6 +24,7 @@
     "lucide-vue-next": "^0.511.0",
     "nuxt": "^3.17.3",
     "nuxt-auth-utils": "^0.5.20",
+    "pinia": "^3.0.2",
     "reka-ui": "^2.2.1",
     "shadcn-nuxt": "^2.1.0",
     "tailwind-merge": "^3.3.0",
