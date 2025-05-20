@@ -12,7 +12,7 @@ onMounted(() => {
     />
     <div id="TopMenu" class="hidden w-full border-b bg-white/85 lg:block">
       <ul
-        class="flex h-10 max-w-4xl items-center justify-end px-2 text-xs font-light text-black"
+        class="mx-auto flex h-10 max-w-4xl items-center justify-end px-2 text-sm font-light text-black"
       >
         <LayoutNavItem><div>Sell on Trendify</div></LayoutNavItem>
         <LayoutNavItem><div>Cookie Preferences</div></LayoutNavItem>
@@ -20,7 +20,16 @@ onMounted(() => {
         <LayoutNavItem><div>Buyer Protection</div></LayoutNavItem>
         <LayoutAuthNavItem />
       </ul>
+      <div class="flex w-full items-center bg-gray-300/30">
+        <div class="mx-auto max-w-4xl">
+          <div
+            class="flex w-full justify-between gap-10 lg:justify-start"
+          ></div>
+        </div>
+      </div>
     </div>
-    <slot />
+    <div class="mx-auto max-w-4xl">
+      <slot />
+    </div>
   </div>
 </template>
