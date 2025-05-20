@@ -25,11 +25,10 @@ onMounted(() => {
     <div class="flex w-full items-center bg-gray-300/30">
       <div class="mx-auto w-full max-w-4xl">
         <div class="flex w-full justify-between gap-10 py-2">
-          <NuxtLink to="/">
-            <img src="/images/logo.png" alt="logo" class="w-10" />
-          </NuxtLink>
-          <div class="hidden lg:block">
+          <SharedLogo />
+          <div class="hidden lg:flex lg:items-center lg:space-x-2">
             <LayoutSearchItems />
+            <LayoutCartCounter />
           </div>
         </div>
       </div>
