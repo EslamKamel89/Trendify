@@ -1,4 +1,4 @@
 <script setup lang="ts"></script>
 <template>
-  <div>Hello world</div>
+  <div class="h-full">Hello world</div>
 </template>

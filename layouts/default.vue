@@ -4,9 +4,10 @@ const isDark = useDark();
 onMounted(() => {
   isDark.value = false;
 });
+const { width } = useWindowSize();
 </script>
 <template>
-  <div id="MainLayout" class="w-[100vw]">
+  <div id="MainLayout" class="flex min-h-screen w-[100vw] flex-col">
     <img
       src="/images/bg.png"
       class="fixed z-[-1] h-[100vh] w-full object-cover"
@@ -24,17 +25,46 @@ onMounted(() => {
     </div>
     <div class="flex w-full items-center bg-gray-300/30">
       <div class="mx-auto w-full max-w-4xl">
-        <div class="flex w-full justify-between gap-10 py-2">
+        <div class="flex w-full justify-between gap-10 px-4 py-2">
           <SharedLogo />
           <div class="hidden lg:flex lg:items-center lg:space-x-2">
             <LayoutSearchItems />
             <LayoutCartCounter />
           </div>
+          <template v-if="width < 1024">
+            <Drawer direction="left" class="">
+              <DrawerTrigger>
+                <Icon
+                  name="lucide:menu"
+                  class="block hover:scale-105 lg:!hidden"
+                  size="20"
+                />
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+                  <DrawerDescription
+                    >This action cannot be undone.</DrawerDescription
+                  >
+                </DrawerHeader>
+                <DrawerFooter>
+                  <Button>Submit</Button>
+                  <DrawerClose>
+                    <Button variant="outline"> Cancel </Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </template>
         </div>
       </div>
     </div>
-    <div class="mx-auto max-w-4xl">
+    <SharedLoading v-if="false" />
+    <div class="mx-auto h-full max-w-4xl flex-1">
       <slot />
+    </div>
+    <div class="w-screen max-w-screen min-w-0">
+      <LayoutFooter />
     </div>
   </div>
 </template>
