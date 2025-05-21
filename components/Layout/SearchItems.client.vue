@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { products } from "@/utils/fakeData";
 import { Search } from "lucide-vue-next";
-
+import type { Product } from "~/types/app";
 const searchItem = ref("");
 const isLoading = ref(false);
 const isOpen = ref(false);
@@ -11,57 +12,10 @@ watch(searchItem, () => {
     isLoading.value = false;
   }, 1000);
   filteredProducts.value = products.filter((product) =>
-    product.name.includes(searchItem.value),
+    product.title.includes(searchItem.value),
   );
 });
-type Product = {
-  id: number;
-  name: string;
-  image: string;
-};
 
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Stainless Steel Whisk",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 2,
-    name: "Silicone Spatula Set",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 3,
-    name: "Ceramic Mixing Bowls",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 4,
-    name: "Kitchen Shears",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 5,
-    name: "Wooden Cutting Board",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 6,
-    name: "Measuring Cups Set",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 7,
-    name: "Glass Measuring Jug",
-    image: "https://picsum.photos/300/300",
-  },
-  {
-    id: 8,
-    name: "Vegetable Peeler",
-    image: "https://picsum.photos/300/300",
-  },
-];
 const filteredProducts = ref<Product[]>(products);
 </script>
 <template>
@@ -86,13 +40,13 @@ const filteredProducts = ref<Product[]>(products);
       </div>
       <div class="w-sm" v-else></div>
     </DropdownMenuTrigger>
-    <DropdownMenuContent class="-translate-y-5 bg-white/50">
+    <DropdownMenuContent class="-translate-y-5 bg-white/90">
       <div class="relative w-sm items-center">
         <Input
           v-model="searchItem"
           autofocus
           placeholder="Kitchen Accessories"
-          class="border-0 pl-10 shadow-lg hover:!border-0 focus:!border-0 active:!border-0"
+          class="border-0 pl-10 shadow-lg hover:scale-110 hover:!border-0 focus:!border-0 active:!border-0"
         />
         <span
           class="absolute inset-y-0 start-0 flex items-center justify-center px-2"
@@ -110,13 +64,13 @@ const filteredProducts = ref<Product[]>(products);
           <div class="flex items-center space-x-2">
             <div class="h-12 w-12 rounded-full">
               <img
-                :src="product.image"
-                :alt="product.name"
+                :src="product.url"
+                :alt="product.title"
                 class="rounded-full object-cover"
               />
             </div>
             <div>
-              {{ product.name }}
+              {{ product.title }}
             </div>
           </div>
         </DropdownMenuLabel>

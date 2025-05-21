@@ -10,7 +10,12 @@ const oldPrice = computed(() => ((props.product.price * 1.2) / 100).toFixed(2));
 <template>
   <div class="cursor-pointer rounded-lg border shadow">
     <NuxtLink :to="`items/${product.id}`">
-      <img :src="product.url" class="w-full rounded-t-lg object-cover" />
+      <div class="h-[300px] overflow-hidden">
+        <img
+          :src="product.url"
+          class="h-[300px] w-full rounded-t-lg object-cover transition-all duration-500 hover:scale-120"
+        />
+      </div>
       <div class="px-2 pb-2">
         <div class="flex items-start justify-start gap-3 pt-1">
           <div class="font-semibold text-red-500">{{ price }}</div>
@@ -27,12 +32,15 @@ const oldPrice = computed(() => ((props.product.price * 1.2) / 100).toFixed(2));
             <Icon name="lucide:star" class="text-amber-600" /><span>4.7</span>
           </div>
         </div>
-        <p class="line-clamp-1 text-sm">
+        <div class="line-clamp-1 text-sm">
           {{
             product.title.substring(0, 60) +
             (product.title.length > 60 ? "..." : "")
           }}
-        </p>
+        </div>
+        <Badge variant="default" class="hover: bg-green-600 hover:bg-green-800"
+          >Free Shipping</Badge
+        >
       </div>
     </NuxtLink>
   </div>
