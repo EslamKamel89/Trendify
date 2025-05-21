@@ -22,15 +22,25 @@ const submitNewsletter = () => {
       <div class="col-span-1">
         <h3 class="mb-4 text-lg font-medium">Quick Links</h3>
         <ul class="space-y-2 text-sm">
-          <li><NuxtLink to="/" class="hover:underline">Home</NuxtLink></li>
           <li>
-            <NuxtLink to="/products" class="hover:underline">Products</NuxtLink>
+            <NuxtLink to="/" class="hover:underline">
+              <Button variant="ghost">Home</Button>
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about" class="hover:underline">About Us</NuxtLink>
+            <NuxtLink to="/products" class="hover:underline">
+              <Button variant="ghost">Products</Button>
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact" class="hover:underline">Contact</NuxtLink>
+            <NuxtLink to="/about" class="hover:underline">
+              <Button variant="ghost">About Us</Button>
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/contact" class="hover:underline">
+              <Button variant="ghost">Contact</Button>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -50,33 +60,27 @@ const submitNewsletter = () => {
             aria-label="Facebook"
             class="transition hover:text-blue-600"
           >
-            <img
-              src="https://img.icons8.com/ios-filled/24/000000/facebook.png "
-              class="h-5 w-5"
-              alt="Facebook"
-            />
+            <Button variant="ghost">
+              <Icon name="lucide:facebook" />
+            </Button>
           </a>
           <a
             href="#"
             aria-label="Instagram"
             class="transition hover:text-pink-600"
           >
-            <img
-              src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png "
-              class="h-5 w-5"
-              alt="Instagram"
-            />
+            <Button variant="ghost">
+              <Icon name="lucide:instagram" />
+            </Button>
           </a>
           <a
             href="#"
             aria-label="Twitter"
             class="transition hover:text-blue-400"
           >
-            <img
-              src="https://img.icons8.com/ios-filled/24/000000/twitter.png "
-              class="h-5 w-5"
-              alt="Twitter"
-            />
+            <Button variant="ghost">
+              <Icon name="lucide:twitter" />
+            </Button>
           </a>
         </div>
       </div>
