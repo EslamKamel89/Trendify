@@ -60,7 +60,7 @@ const { width } = useWindowSize();
       </div>
     </div>
     <SharedLoading v-if="false" />
-    <div class="mx-auto h-full max-w-4xl flex-1 overflow-x-hidden py-4">
+    <div class="mx-auto h-full w-full max-w-4xl flex-1 overflow-x-hidden py-4">
       <slot />
     </div>
     <div class="max-w-screen min-w-0">
