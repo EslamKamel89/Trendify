@@ -7,7 +7,7 @@ onMounted(() => {
 const { width } = useWindowSize();
 </script>
 <template>
-  <div id="MainLayout" class="flex min-h-screen w-[100vw] flex-col">
+  <div id="MainLayout" class="flex min-h-screen flex-col">
     <img
       src="/images/bg.png"
       class="fixed z-[-1] h-[100vh] w-full object-cover"
@@ -60,10 +60,10 @@ const { width } = useWindowSize();
       </div>
     </div>
     <SharedLoading v-if="false" />
-    <div class="mx-auto h-full max-w-4xl flex-1">
+    <div class="mx-auto h-full max-w-4xl flex-1 overflow-x-hidden py-4">
       <slot />
     </div>
-    <div class="w-screen max-w-screen min-w-0">
+    <div class="max-w-screen min-w-0">
       <LayoutFooter />
     </div>
   </div>
