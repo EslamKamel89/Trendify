@@ -5,10 +5,16 @@ const props = defineProps<{
   product: Product;
   selectedArray: Product[];
 }>();
-defineEmits<{
+const emit = defineEmits<{
   selectedRadio: [];
 }>();
+const appStore = useAppStore();
+const { cart } = storeToRefs(appStore);
+const isSelected = ref(false);
+const removeFromCart = () => {
+  cart.value.forEach((product, index) => {});
+};
 </script>
 <template>
-  <div></div>
+  <div class="my-2 flex justify-start"></div>
 </template>

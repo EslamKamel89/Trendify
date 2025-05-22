@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { products as fakeProducts } from "~/utils/fakeData";
-const products = ref(fakeProducts.slice(0, 2));
+const { cart } = storeToRefs(useAppStore());
 </script>
 <template>
   <div v-if="false" class="flex flex-col items-center justify-center">
@@ -20,12 +19,10 @@ const products = ref(fakeProducts.slice(0, 2));
   >
     <div class="w-[65%]">
       <div class="rounded-lg bg-white p-4">
-        <div class="mb-2 text-lg font-bold">Shopping Cart(0)</div>
-        <div
-          v-if="products.length"
-          v-for="product in products"
-          :key="product.id"
-        >
+        <div class="mb-2 text-lg font-bold">
+          Shopping Cart ({{ cart.length }})
+        </div>
+        <div v-if="cart.length" v-for="product in cart" :key="product.id">
           {{ product.title }}
         </div>
       </div>
