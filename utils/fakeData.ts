@@ -162,3 +162,17 @@ export const products: Product[] = [
     price: 12999,
   },
 ];
+
+export const randomImages = [
+  "https://picsum.photos/id/100/200/200 ",
+  "https://picsum.photos/id/101/200/200 ",
+  "https://picsum.photos/id/102/200/200 ",
+  "https://picsum.photos/id/103/200/200 ",
+  "https://picsum.photos/id/104/200/200 ",
+  "https://picsum.photos/id/105/200/200 ",
+  "https://picsum.photos/id/106/200/200 ",
+  "https://picsum.photos/id/107/200/200 ",
+  "https://picsum.photos/id/108/200/200 ",
+  "https://picsum.photos/id/109/200/200 ",
+  "https://picsum.photos/id/110/200/200 ",
+];
